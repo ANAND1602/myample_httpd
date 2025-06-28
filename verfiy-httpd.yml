@@ -5,7 +5,7 @@
   tasks:
 
   - name: Verify the index.html file is in place
-    ansible.builtin.command: cat /var/www/vhosts/servera/index.html
+    ansible.builtin.command: cat /var/www/vhosts/ansible-awx/index.html
     register: content
 
   - name: What does the index.html config file contain
