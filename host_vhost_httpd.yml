@@ -12,6 +12,8 @@
 
   post_tasks:
     - name: HTML content is installed
+      become: true
+      become_user: root 
       ansible.builtin.copy:
         src: files/html/
         dest: "/var/www/vhosts/{{ ansible_hostname }}"
