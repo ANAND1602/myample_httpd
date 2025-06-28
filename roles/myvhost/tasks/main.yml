@@ -2,6 +2,8 @@
 # tasks file for myvhost
 
 - name: Ensure httpd is installed
+  become_user: root
+  remote_user: ansible
   become: true
   ansible.builtin.dnf:
     name: httpd
@@ -9,7 +11,9 @@
 
 
 - name: Ensure httpd is started and enabled
+  become_user: root
   become: true
+  remote_user: ansible
   ansible.builtin.service:
     name: httpd
     state: started
@@ -17,7 +21,9 @@
 
 
 - name: vhost file is installed
+  become_user: root
   become: true
+  remote_user: ansible
   ansible.builtin.template:
     src: vhost.conf.j2
     dest: /etc/httpd/conf.d/vhost.conf
