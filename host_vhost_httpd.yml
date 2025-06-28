@@ -1,6 +1,6 @@
 ---
 - name: Use myvhost role playbook
-  hosts: webservers
+  hosts: all
   pre_tasks:
     - name: pre_tasks message
       ansible.builtin.debug:
