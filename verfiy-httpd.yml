@@ -1,6 +1,6 @@
 ---
 - name: Verify the index.html file
-  hosts: servera.lab.example.com
+  hosts: all
 
   tasks:
 
