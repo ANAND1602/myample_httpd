@@ -2,12 +2,14 @@
 # tasks file for myvhost
 
 - name: Ensure httpd is installed
+  become: true
   ansible.builtin.dnf:
     name: httpd
     state: latest
 
 
 - name: Ensure httpd is started and enabled
+  become: true
   ansible.builtin.service:
     name: httpd
     state: started
@@ -15,6 +17,7 @@
 
 
 - name: vhost file is installed
+  become: true
   ansible.builtin.template:
     src: vhost.conf.j2
     dest: /etc/httpd/conf.d/vhost.conf
